@@ -8,7 +8,7 @@ import "./App.css";
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
-  const [searchError, setSearchError] = useState(false);const a = "eb2";
+  const [searchError, setSearchError] = useState(false); const a = "eb2";
   const b = "892";
   const c = "1a";
   const d = `https://www.omdbapi.com?apikey=${a}${b}${c}`;
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("Avengers");
   }, []);
 
   const searchMovies = async (title) => {
@@ -45,19 +45,21 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>MovieMax</h1>
-      <form onSubmit={handleSearch}>
-        <div className="search">
-          <input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search for movies"
-          />
-          <button type="submit">
-            <img src={SearchIcon} alt="search" />
-          </button>
-        </div>
-      </form>
+      <div className="nav-bar">
+        <h1>MovieMax</h1>
+        <form onSubmit={handleSearch}>
+          <div className="search">
+            <input
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search for movies"
+            />
+            <button type="submit">
+              <img src={SearchIcon} alt="search" />
+            </button>
+          </div>
+        </form>
+      </div>
       {searchError ? (
         <div className="empty">
           <h2>No movies found for "{searchTerm}"</h2>
