@@ -27,7 +27,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("Avengers");
+    searchMovies("marvel");
   }, []);
 
   const searchMovies = async (title) => {
